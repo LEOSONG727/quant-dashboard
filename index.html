@@ -336,8 +336,6 @@
     </div>
 
     <script>
-    const ANIMAL_EMOJIS = ['🐶', '🐱', '🐻', '🐼', '🐸', '🦊', '🐯'];
-
     // Tetromino definitions: each piece maps to an animal emoji
     const TETROMINOES = [
         { // I-piece
@@ -515,7 +513,6 @@
                 }
             }
             this.clearLines();
-            this.spawnPiece();
         }
 
         clearLines() {
@@ -528,10 +525,16 @@
 
             if (fullRows.length === 0) {
                 this.render();
+                this.spawnPiece();
                 return;
             }
 
+            // Pause dropping during animation
+            clearInterval(this.dropInterval);
+            this.currentPiece = null;
+
             // Show clearing animation
+            this.render();
             fullRows.forEach(r => {
                 for (let c = 0; c < COLS; c++) {
                     const cell = this.getCellEl(r, c);
@@ -552,6 +555,7 @@
                 this.level = Math.floor(this.lines / LINES_PER_LEVEL) + 1;
 
                 this.updateUI();
+                this.spawnPiece();
                 this.render();
                 this.startDropTimer(); // adjust speed for new level
             }, 400);
@@ -675,6 +679,7 @@
             const cells = document.querySelectorAll('#game-board .cell');
             cells.forEach(cell => {
                 cell.textContent = '';
+                cell.style.opacity = '1';
                 cell.classList.remove('filled', 'clearing');
             });
 
@@ -765,9 +770,11 @@
                     case 'ArrowDown':
                         e.preventDefault();
                         if (!this.paused) {
-                            this.moveDown();
-                            this.score += 1;
-                            this.updateUI();
+                            const moved = this.moveDown();
+                            if (moved) {
+                                this.score += 1;
+                                this.updateUI();
+                            }
                         }
                         break;
                     case 'ArrowUp':
