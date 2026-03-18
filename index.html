@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>퀀트봇 v4 성과</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:      #0f172a;
+      --surface: #1e293b;
+      --border:  #334155;
+      --text:    #f1f5f9;
+      --muted:   #94a3b8;
+      --green:   #10b981;
+      --red:     #ef4444;
+      --blue:    #3b82f6;
+      --yellow:  #f59e0b;
+      --purple:  #a855f7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Sans KR', -apple-system, sans-serif;
+      font-size: 14px;
+      min-height: 100vh;
+    }
+
+    /* ── 헤더 ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    header h1 {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    header h1 span { color: var(--blue); }
+    #updated-at { font-size: 12px; color: var(--muted); }
+
+    /* ── 레이아웃 ── */
+    main { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
+
+    /* ── 카드 그리드 ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .card .label {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .card .value {
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .card .sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .positive { color: var(--green); }
+    .negative { color: var(--red); }
+    .neutral  { color: var(--text); }
+
+    /* 포지션 카드 배지 */
+    .ticker-badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+    .ticker-TQQQ { background: rgba(59,130,246,.2); color: var(--blue); }
+    .ticker-PSQ  { background: rgba(239,68,68,.2);  color: var(--red); }
+    .ticker-SGOV { background: rgba(148,163,184,.15); color: var(--muted); }
+
+    /* ── 차트 박스 ── */
+    .chart-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    .chart-box h2 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .chart-wrapper { position: relative; height: 260px; }
+
+    /* ── 거래 이력 테이블 ── */
+    .table-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      overflow-x: auto;
+    }
+    .table-box h2 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    th {
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    td {
+      padding: 11px 12px;
+      border-bottom: 1px solid rgba(51,65,85,.5);
+      font-size: 13px;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(255,255,255,.02); }
+
+    /* 액션 배지 */
+    .action-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .action-buy  { background: rgba(16,185,129,.2); color: var(--green); }
+    .action-add  { background: rgba(59,130,246,.2); color: var(--blue); }
+    .action-hold { background: rgba(148,163,184,.1); color: var(--muted); }
+
+    /* State 배지 */
+    .state-A { color: var(--red); }
+    .state-B { color: var(--green); }
+    .state-C { color: var(--blue); }
+    .state-D { color: var(--muted); }
+    .state-trail, .state-trail_A { color: var(--yellow); }
+
+    /* ── 로딩 / 에러 ── */
+    #loading {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    #error-msg {
+      display: none;
+      background: rgba(239,68,68,.1);
+      border: 1px solid rgba(239,68,68,.3);
+      border-radius: 8px;
+      padding: 16px 20px;
+      color: var(--red);
+      margin-bottom: 20px;
+    }
+
+    /* ── 반응형 ── */
+    @media (max-width: 600px) {
+      .card .value { font-size: 22px; }
+      td, th { padding: 8px 8px; font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🤖 <span>퀀트봇 v4</span> 성과 대시보드</h1>
+  <span id="updated-at">데이터 로딩 중…</span>
+</header>
+
+<main>
+  <div id="error-msg">⚠ 데이터를 불러오지 못했습니다. 잠시 후 다시 시도하세요.</div>
+  <div id="loading">데이터 불러오는 중…</div>
+
+  <div id="dashboard" style="display:none">
+    <!-- 요약 카드 -->
+    <div class="cards">
+      <div class="card">
+        <div class="label">현재 포지션</div>
+        <div class="value" id="c-ticker">—</div>
+        <div class="sub" id="c-state">—</div>
+      </div>
+      <div class="card">
+        <div class="label">누적 수익률</div>
+        <div class="value" id="c-return">—</div>
+        <div class="sub" id="c-nav">NAV —</div>
+      </div>
+      <div class="card">
+        <div class="label">최대 낙폭 (MDD)</div>
+        <div class="value" id="c-mdd">—</div>
+        <div class="sub" id="c-peak">최고 NAV —</div>
+      </div>
+      <div class="card">
+        <div class="label">운용 기간</div>
+        <div class="value" id="c-days">—</div>
+        <div class="sub" id="c-trades">총 — 회 전환</div>
+      </div>
+      <div class="card">
+        <div class="label">전략</div>
+        <div class="value" style="font-size:16px; margin-top:4px;">4-Regime v4</div>
+        <div class="sub">TQQQ / PSQ / SGOV</div>
+      </div>
+    </div>
+
+    <!-- NAV 차트 -->
+    <div class="chart-box">
+      <h2>포트폴리오 NAV 추이 (USD)</h2>
+      <div class="chart-wrapper">
+        <canvas id="navChart"></canvas>
+      </div>
+    </div>
+
+    <!-- 거래 이력 -->
+    <div class="table-box">
+      <h2>거래 이력</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>날짜</th>
+            <th>액션</th>
+            <th>포지션</th>
+            <th>State</th>
+            <th style="text-align:right">NAV (USD)</th>
+            <th style="text-align:right">누적 수익률</th>
+          </tr>
+        </thead>
+        <tbody id="trade-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<script>
+  // ────────────────────────────────────────────────────────
+  // ★ 데이터 URL — GitHub Raw URL로 교체하세요
+  // 형식: https://raw.githubusercontent.com/유저명/저장소명/main/performance.json
+  // ────────────────────────────────────────────────────────
+  const DATA_URL = '__DATA_URL__';
+
+  // ── 상수 ──────────────────────────────────────────────
+  const STATE_LABELS = {
+    A: 'State A — 매크로 충격',
+    B: 'State B — 공포 회복',
+    C: 'State C — 대세 상승',
+    C_wait: 'State C — 확인 대기',
+    trail: '트레일링 스탑',
+    trail_A: '트레일링 스탑 + A',
+    D: 'State D — 횡보 관망',
+  };
+  const STATE_COLORS = {
+    A: '#ef4444', B: '#10b981', C: '#3b82f6',
+    C_wait: '#60a5fa', trail: '#f59e0b', trail_A: '#f97316', D: '#64748b',
+  };
+  const ACTION_LABELS = { buy: '전환 매수', add: '추가 매수', hold: '유지' };
+
+  // ── 데이터 로드 ────────────────────────────────────────
+  async function fetchData() {
+    const url = DATA_URL + '?t=' + Date.now();  // 캐시 방지
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  }
+
+  // ── 카드 렌더 ──────────────────────────────────────────
+  function renderCards(s) {
+    const ret    = s.total_return_pct;
+    const mdd    = s.max_drawdown_pct;
+    const ticker = s.current_ticker;
+    const state  = s.current_state;
+
+    // 포지션
+    const el = document.getElementById('c-ticker');
+    el.innerHTML = `<span class="ticker-badge ticker-${ticker}">${ticker}</span>`;
+    document.getElementById('c-state').textContent = STATE_LABELS[state] || state;
+
+    // 수익률
+    const retEl = document.getElementById('c-return');
+    retEl.textContent = fmt(ret, true) + '%';
+    retEl.className   = 'value ' + colorClass(ret);
+    document.getElementById('c-nav').textContent = `NAV $${s.current_nav.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2})}`;
+
+    // MDD
+    const mddEl = document.getElementById('c-mdd');
+    mddEl.textContent = fmt(mdd, true) + '%';
+    mddEl.className   = 'value ' + (mdd < 0 ? 'negative' : 'neutral');
+    document.getElementById('c-peak').textContent = `최고 NAV $${s.peak_nav.toFixed(2)}`;
+
+    // 운용기간
+    document.getElementById('c-days').textContent = s.days_running + '일';
+    document.getElementById('c-trades').textContent = `총 ${s.trade_count}회 전환`;
+  }
+
+  // ── NAV 차트 ───────────────────────────────────────────
+  let navChart = null;
+  function renderChart(navHistory) {
+    const labels    = navHistory.map(e => e.date.slice(5));   // MM-DD
+    const navValues = navHistory.map(e => e.nav);
+    const states    = navHistory.map(e => e.state);
+    const pointColors = states.map(s => STATE_COLORS[s] || '#64748b');
+
+    const ctx = document.getElementById('navChart').getContext('2d');
+    if (navChart) navChart.destroy();
+
+    navChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels,
+        datasets: [{
+          label: 'NAV (USD)',
+          data: navValues,
+          borderColor: '#3b82f6',
+          backgroundColor: 'rgba(59,130,246,0.08)',
+          borderWidth: 2.5,
+          pointRadius: 6,
+          pointBackgroundColor: pointColors,
+          pointBorderColor: pointColors,
+          pointHoverRadius: 8,
+          fill: true,
+          tension: 0.3,
+        }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#1e293b',
+            borderColor: '#334155',
+            borderWidth: 1,
+            titleColor: '#94a3b8',
+            bodyColor: '#f1f5f9',
+            padding: 12,
+            callbacks: {
+              label: ctx => {
+                const state  = states[ctx.dataIndex];
+                const nav    = ctx.parsed.y;
+                return [
+                  `NAV: $${nav.toFixed(2)}`,
+                  `State: ${STATE_LABELS[state] || state}`,
+                ];
+              },
+            },
+          },
+        },
+        scales: {
+          x: {
+            grid: { color: 'rgba(51,65,85,0.5)' },
+            ticks: { color: '#94a3b8', font: { size: 11 } },
+          },
+          y: {
+            grid: { color: 'rgba(51,65,85,0.5)' },
+            ticks: {
+              color: '#94a3b8',
+              font: { size: 11 },
+              callback: v => '$' + v.toFixed(0),
+            },
+          },
+        },
+      },
+    });
+  }
+
+  // ── 거래 이력 테이블 ───────────────────────────────────
+  function renderTable(tradeLog) {
+    const tbody = document.getElementById('trade-tbody');
+    tbody.innerHTML = '';
+
+    // 최신순 정렬
+    const rows = [...tradeLog].reverse();
+    rows.forEach(t => {
+      const ret    = t.return_pct;
+      const action = t.action;
+      const state  = t.state;
+
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${t.date}</td>
+        <td><span class="action-badge action-${action}">${ACTION_LABELS[action] || action}</span></td>
+        <td>
+          <span class="ticker-badge ticker-${t.to_ticker}" style="font-size:11px;padding:1px 7px">${t.to_ticker}</span>
+        </td>
+        <td class="state-${state.replace('_','')}">${STATE_LABELS[state] || state}</td>
+        <td style="text-align:right;font-variant-numeric:tabular-nums">$${t.nav.toFixed(2)}</td>
+        <td style="text-align:right" class="${colorClass(ret)}">${fmt(ret, true)}%</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  // ── 유틸 ──────────────────────────────────────────────
+  function fmt(v, sign = false) {
+    const s = Math.abs(v).toFixed(2);
+    return (sign ? (v >= 0 ? '+' : '-') : '') + s;
+  }
+  function colorClass(v) {
+    return v > 0 ? 'positive' : v < 0 ? 'negative' : 'neutral';
+  }
+
+  // ── 메인 ──────────────────────────────────────────────
+  async function init() {
+    try {
+      const data = await fetchData();
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
+
+      const s = data.summary || {};
+      document.getElementById('updated-at').textContent = '업데이트: ' + (s.updated_at || '—');
+
+      renderCards(s);
+      renderChart(data.nav_history || []);
+      renderTable(data.trade_log || []);
+    } catch (e) {
+      document.getElementById('loading').style.display = 'none';
+      const errEl = document.getElementById('error-msg');
+      errEl.style.display = 'block';
+      errEl.textContent = '⚠ 데이터 로드 실패: ' + e.message;
+      console.error(e);
+    }
+  }
+
+  init();
+</script>
+</body>
+</html>
