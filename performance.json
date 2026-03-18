@@ -59,27 +59,33 @@
     },
     {
       "date": "2026-03-19",
-      "action": "hold",
+      "action": "add",
       "from_ticker": "PSQ",
       "to_ticker": "PSQ",
       "state": "A",
       "nav": 1674.06,
-      "strategy_return_pct": 150.29
+      "strategy_return_pct": -0.09
     }
   ],
-  "deposits": [],
+  "deposits": [
+    {
+      "date": "2026-03-19",
+      "amount": 1006.76,
+      "note": "추가입금 자동 감지 ($1014.85 - $8.09)"
+    }
+  ],
   "summary": {
     "updated_at": "2026-03-19 04:50 KST",
     "strategy": "4-Regime v4",
     "current_ticker": "PSQ",
     "current_state": "A",
-    "total_invested": 668.86,
+    "total_invested": 1675.62,
     "current_nav": 1674.06,
-    "strategy_return_pct": 150.29,
+    "strategy_return_pct": -0.09,
     "peak_nav": 1674.06,
     "max_drawdown_pct": -1.46,
     "trade_count": 0,
     "days_running": 6,
-    "deposit_count": 0
+    "deposit_count": 1
   }
 }
