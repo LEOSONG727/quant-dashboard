@@ -4,19 +4,22 @@
       "date": "2026-03-14",
       "nav": 668.86,
       "ticker": "PSQ",
-      "state": "A"
+      "state": "A",
+      "cash": 290.62
     },
     {
       "date": "2026-03-17",
       "nav": 662.87,
       "ticker": "PSQ",
-      "state": "A"
+      "state": "A",
+      "cash": 8.09
     },
     {
       "date": "2026-03-18",
       "nav": 659.09,
       "ticker": "PSQ",
-      "state": "A"
+      "state": "A",
+      "cash": 8.09
     }
   ],
   "trade_log": [
@@ -50,7 +53,7 @@
   ],
   "deposits": [],
   "summary": {
-    "updated_at": "2026-03-18 22:29 KST",
+    "updated_at": "2026-03-18 22:48 KST",
     "strategy": "4-Regime v4",
     "current_ticker": "PSQ",
     "current_state": "A",
