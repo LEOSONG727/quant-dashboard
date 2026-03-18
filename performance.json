@@ -1,0 +1,64 @@
+{
+  "nav_history": [
+    {
+      "date": "2026-03-14",
+      "nav": 668.86,
+      "ticker": "PSQ",
+      "state": "A"
+    },
+    {
+      "date": "2026-03-17",
+      "nav": 662.87,
+      "ticker": "PSQ",
+      "state": "A"
+    },
+    {
+      "date": "2026-03-18",
+      "nav": 659.09,
+      "ticker": "PSQ",
+      "state": "A"
+    }
+  ],
+  "trade_log": [
+    {
+      "date": "2026-03-14",
+      "action": "hold",
+      "from_ticker": "PSQ",
+      "to_ticker": "PSQ",
+      "state": "A",
+      "nav": 668.86,
+      "return_pct": 0.0
+    },
+    {
+      "date": "2026-03-17",
+      "action": "hold",
+      "from_ticker": "PSQ",
+      "to_ticker": "PSQ",
+      "state": "A",
+      "nav": 662.87,
+      "return_pct": -0.9
+    },
+    {
+      "date": "2026-03-18",
+      "action": "hold",
+      "from_ticker": "PSQ",
+      "to_ticker": "PSQ",
+      "state": "A",
+      "nav": 659.09,
+      "return_pct": -1.46
+    }
+  ],
+  "summary": {
+    "updated_at": "2026-03-18 22:10 KST",
+    "strategy": "4-Regime v4",
+    "current_ticker": "PSQ",
+    "current_state": "A",
+    "initial_nav": 668.86,
+    "current_nav": 659.09,
+    "total_return_pct": -1.46,
+    "peak_nav": 668.86,
+    "max_drawdown_pct": -1.46,
+    "trade_count": 0,
+    "days_running": 5
+  }
+}
