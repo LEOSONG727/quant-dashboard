@@ -158,9 +158,10 @@
       font-size: 11px;
       font-weight: 600;
     }
-    .action-buy  { background: rgba(16,185,129,.2); color: var(--green); }
-    .action-add  { background: rgba(59,130,246,.2); color: var(--blue); }
-    .action-hold { background: rgba(148,163,184,.1); color: var(--muted); }
+    .action-buy     { background: rgba(16,185,129,.2); color: var(--green); }
+    .action-add     { background: rgba(59,130,246,.2); color: var(--blue); }
+    .action-hold    { background: rgba(148,163,184,.1); color: var(--muted); }
+    .action-deposit { background: rgba(245,158,11,.2);  color: var(--yellow); }
 
     /* State 배지 */
     .state-A { color: var(--red); }
@@ -213,7 +214,7 @@
         <div class="sub" id="c-state">—</div>
       </div>
       <div class="card">
-        <div class="label">누적 수익률</div>
+        <div class="label">전략 수익률 (입금 제외)</div>
         <div class="value" id="c-return">—</div>
         <div class="sub" id="c-nav">NAV —</div>
       </div>
@@ -283,7 +284,7 @@
     A: '#ef4444', B: '#10b981', C: '#3b82f6',
     C_wait: '#60a5fa', trail: '#f59e0b', trail_A: '#f97316', D: '#64748b',
   };
-  const ACTION_LABELS = { buy: '전환 매수', add: '추가 매수', hold: '유지' };
+  const ACTION_LABELS = { buy: '전환 매수', add: '추가 매수', hold: '유지', deposit: '추가 입금' };
 
   // ── 데이터 로드 ────────────────────────────────────────
   async function fetchData() {
@@ -295,7 +296,7 @@
 
   // ── 카드 렌더 ──────────────────────────────────────────
   function renderCards(s) {
-    const ret    = s.total_return_pct;
+    const ret    = s.strategy_return_pct;
     const mdd    = s.max_drawdown_pct;
     const ticker = s.current_ticker;
     const state  = s.current_state;
@@ -305,11 +306,12 @@
     el.innerHTML = `<span class="ticker-badge ticker-${ticker}">${ticker}</span>`;
     document.getElementById('c-state').textContent = STATE_LABELS[state] || state;
 
-    // 수익률
+    // 전략 수익률 (입금 제외)
     const retEl = document.getElementById('c-return');
     retEl.textContent = fmt(ret, true) + '%';
     retEl.className   = 'value ' + colorClass(ret);
-    document.getElementById('c-nav').textContent = `NAV $${s.current_nav.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2})}`;
+    document.getElementById('c-nav').textContent =
+      `NAV $${s.current_nav.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2})}  /  투자금 $${s.total_invested.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2})}`;
 
     // MDD
     const mddEl = document.getElementById('c-mdd');
@@ -319,7 +321,8 @@
 
     // 운용기간
     document.getElementById('c-days').textContent = s.days_running + '일';
-    document.getElementById('c-trades').textContent = `총 ${s.trade_count}회 전환`;
+    document.getElementById('c-trades').textContent =
+      `전환 ${s.trade_count}회 · 추가입금 ${s.deposit_count || 0}회`;
   }
 
   // ── NAV 차트 ───────────────────────────────────────────
@@ -402,7 +405,7 @@
     // 최신순 정렬
     const rows = [...tradeLog].reverse();
     rows.forEach(t => {
-      const ret    = t.return_pct;
+      const ret    = t.strategy_return_pct;
       const action = t.action;
       const state  = t.state;
 
@@ -414,9 +417,12 @@
           <span class="ticker-badge ticker-${t.to_ticker}" style="font-size:11px;padding:1px 7px">${t.to_ticker}</span>
         </td>
         <td class="state-${state.replace('_','')}">${STATE_LABELS[state] || state}</td>
-        <td style="text-align:right;font-variant-numeric:tabular-nums">$${t.nav.toFixed(2)}</td>
+        <td style="text-align:right;font-variant-numeric:tabular-nums">
+          $${t.nav.toFixed(2)}${t.deposit_amount ? ` <span style="font-size:11px;color:var(--yellow)">(+$${t.deposit_amount.toFixed(2)} 입금)</span>` : ''}
+        </td>
         <td style="text-align:right" class="${colorClass(ret)}">${fmt(ret, true)}%</td>
       `;
+      if (t.action === 'deposit') tr.style.background = 'rgba(245,158,11,0.04)';
       tbody.appendChild(tr);
     });
   }
