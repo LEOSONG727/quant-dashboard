@@ -39,6 +39,14 @@
       "state": "A",
       "cash": 439.34,
       "remaining_cash": 29.32
+    },
+    {
+      "date": "2026-03-21",
+      "nav": 2960.92,
+      "ticker": "PSQ",
+      "state": "A",
+      "cash": 864.02,
+      "remaining_cash": 57.77
     }
   ],
   "trade_log": [
@@ -89,14 +97,12 @@
     },
     {
       "date": "2026-03-21",
-      "action": "deposit",
-      "from_ticker": "-",
+      "action": "add",
+      "from_ticker": "PSQ",
       "to_ticker": "PSQ",
       "state": "A",
-      "nav": 2079.42,
-      "strategy_return_pct": -28.49,
-      "deposit_amount": 834.7,
-      "note": "추가입금 자동 감지 ($864.02 - $29.32)"
+      "nav": 2960.92,
+      "strategy_return_pct": 1.82
     }
   ],
   "deposits": [
@@ -122,9 +128,9 @@
     "current_ticker": "PSQ",
     "current_state": "A",
     "total_invested": 2907.9,
-    "current_nav": 2079.42,
-    "strategy_return_pct": -28.49,
-    "peak_nav": 2079.42,
+    "current_nav": 2960.92,
+    "strategy_return_pct": 1.82,
+    "peak_nav": 2960.92,
     "max_drawdown_pct": -1.46,
     "trade_count": 2,
     "days_running": 8,
