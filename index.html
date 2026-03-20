@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>퀀트봇 v4 성과</title>
+  <title>퀀트봇 v5h_B 성과</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -169,6 +169,7 @@
     .state-C { color: var(--blue); }
     .state-D { color: var(--muted); }
     .state-trail, .state-trail_A { color: var(--yellow); }
+    .state-profit { color: var(--purple); }
 
     /* ── 로딩 / 에러 ── */
     #loading {
@@ -197,7 +198,7 @@
 <body>
 
 <header>
-  <h1>🤖 <span>퀀트봇 v4</span> 성과 대시보드</h1>
+  <h1>🤖 <span>퀀트봇 v5h_B</span> 성과 대시보드</h1>
   <span id="updated-at">데이터 로딩 중…</span>
 </header>
 
@@ -230,7 +231,7 @@
       </div>
       <div class="card">
         <div class="label">전략</div>
-        <div class="value" style="font-size:16px; margin-top:4px;">4-Regime v4</div>
+        <div class="value" style="font-size:16px; margin-top:4px;">4-Regime v5h_B</div>
         <div class="sub">TQQQ / PSQ / SGOV</div>
       </div>
     </div>
@@ -278,11 +279,13 @@
     C_wait: 'State C — 확인 대기',
     trail: '트레일링 스탑',
     trail_A: '트레일링 스탑 + A',
+    profit: '이익실현 → SGOV',
     D: 'State D — 횡보 관망',
   };
   const STATE_COLORS = {
     A: '#ef4444', B: '#10b981', C: '#3b82f6',
-    C_wait: '#60a5fa', trail: '#f59e0b', trail_A: '#f97316', D: '#64748b',
+    C_wait: '#60a5fa', trail: '#f59e0b', trail_A: '#f97316',
+    profit: '#a855f7', D: '#64748b',
   };
   const ACTION_LABELS = { buy: '전환 매수', add: '추가 매수', hold: '유지', deposit: '추가 입금' };
 
