@@ -103,6 +103,17 @@
       "state": "A",
       "nav": 2960.92,
       "strategy_return_pct": 1.82
+    },
+    {
+      "date": "2026-03-24",
+      "action": "deposit",
+      "from_ticker": "-",
+      "to_ticker": "PSQ",
+      "state": "A",
+      "nav": 2960.92,
+      "strategy_return_pct": -29.95,
+      "deposit_amount": 1318.69,
+      "note": "추가입금 자동 감지 ($1376.46 - $57.77)"
     }
   ],
   "deposits": [
@@ -120,20 +131,25 @@
       "date": "2026-03-21",
       "amount": 834.7,
       "note": "추가입금 자동 감지 ($864.02 - $29.32)"
+    },
+    {
+      "date": "2026-03-24",
+      "amount": 1318.69,
+      "note": "추가입금 자동 감지 ($1376.46 - $57.77)"
     }
   ],
   "summary": {
-    "updated_at": "2026-03-21 04:50 KST",
+    "updated_at": "2026-03-24 06:03 KST",
     "strategy": "4-Regime v5i",
     "current_ticker": "PSQ",
     "current_state": "A",
-    "total_invested": 2907.9,
+    "total_invested": 4226.59,
     "current_nav": 2960.92,
-    "strategy_return_pct": 1.82,
+    "strategy_return_pct": -29.95,
     "peak_nav": 2960.92,
     "max_drawdown_pct": -1.46,
-    "trade_count": 2,
-    "days_running": 8,
-    "deposit_count": 3
+    "trade_count": 3,
+    "days_running": 11,
+    "deposit_count": 4
   }
 }
