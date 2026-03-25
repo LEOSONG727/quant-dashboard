@@ -63,6 +63,14 @@
       "state": "A",
       "cash": 72.09,
       "remaining_cash": 8.09
+    },
+    {
+      "date": "2026-03-26",
+      "nav": 4218.59,
+      "ticker": "PSQ",
+      "state": "A",
+      "cash": 8.48,
+      "remaining_cash": 8.48
     }
   ],
   "trade_log": [
@@ -137,6 +145,15 @@
       "state": "A",
       "nav": 4264.09,
       "strategy_return_pct": 0.89
+    },
+    {
+      "date": "2026-03-26",
+      "action": "hold",
+      "from_ticker": "PSQ",
+      "to_ticker": "PSQ",
+      "state": "A",
+      "nav": 4218.59,
+      "strategy_return_pct": -0.19
     }
   ],
   "deposits": [
@@ -162,17 +179,17 @@
     }
   ],
   "summary": {
-    "updated_at": "2026-03-25 06:38 KST",
+    "updated_at": "2026-03-26 04:50 KST",
     "strategy": "4-Regime v5i",
     "current_ticker": "PSQ",
     "current_state": "A",
     "total_invested": 4226.59,
-    "current_nav": 4264.09,
-    "strategy_return_pct": 0.89,
+    "current_nav": 4218.59,
+    "strategy_return_pct": -0.19,
     "peak_nav": 4264.09,
     "max_drawdown_pct": -1.46,
-    "trade_count": 4,
-    "days_running": 12,
+    "trade_count": 5,
+    "days_running": 13,
     "deposit_count": 4
   }
 }
