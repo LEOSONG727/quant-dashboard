@@ -79,6 +79,14 @@
       "state": "A",
       "cash": 8.48,
       "remaining_cash": 8.48
+    },
+    {
+      "date": "2026-03-28",
+      "nav": 5728.86,
+      "ticker": "PSQ",
+      "state": "A",
+      "cash": 1329.22,
+      "remaining_cash": 72.18
     }
   ],
   "trade_log": [
@@ -174,14 +182,12 @@
     },
     {
       "date": "2026-03-28",
-      "action": "deposit",
-      "from_ticker": "-",
+      "action": "add",
+      "from_ticker": "PSQ",
       "to_ticker": "PSQ",
       "state": "A",
-      "nav": 4313.02,
-      "strategy_return_pct": -22.25,
-      "deposit_amount": 1320.74,
-      "note": "추가입금 자동 감지 ($1329.22 - $8.48)"
+      "nav": 5728.86,
+      "strategy_return_pct": 3.27
     }
   ],
   "deposits": [
@@ -217,12 +223,40 @@
     "current_ticker": "PSQ",
     "current_state": "A",
     "total_invested": 5547.33,
-    "current_nav": 4313.02,
-    "strategy_return_pct": -22.25,
-    "peak_nav": 4313.02,
+    "current_nav": 5728.86,
+    "strategy_return_pct": 3.27,
+    "peak_nav": 5728.86,
     "max_drawdown_pct": -1.46,
     "trade_count": 5,
     "days_running": 15,
     "deposit_count": 5
+  },
+  "indicators": {
+    "date": "2026-03-28",
+    "vix": 31.0,
+    "vix3m": 29.040000915527344,
+    "vix_bb_upper": 30.385776368686372,
+    "vix_shock": true,
+    "vix_declining": false,
+    "term_structure": 1.0674930792934194,
+    "qqq": 561.97998046875,
+    "qqq_ma50": 606.4579992675781,
+    "qqq_exit_threshold": 594.33,
+    "qqq_below_ma50": true,
+    "wti_roc_20": 49.656830909636284,
+    "wti_95pct": 37.155153120235575,
+    "wti_shock": true,
+    "state_a": true,
+    "state_b": false,
+    "state_b_ts_recent": true,
+    "state_b_ts_normalized": false,
+    "state_c": false,
+    "state_c_vix_declining": false,
+    "sc_raw_3d": [
+      false,
+      false,
+      false
+    ],
+    "tqqq_exit_2day": true
   }
 }
