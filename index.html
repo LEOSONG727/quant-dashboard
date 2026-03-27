@@ -188,7 +188,93 @@
       margin-bottom: 20px;
     }
 
+    /* ── 지표 패널 ── */
+    .indicators-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .ind-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .ind-box h2 {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .ind-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(51,65,85,0.4);
+      gap: 8px;
+    }
+    .ind-row:last-child { border-bottom: none; }
+    .ind-label {
+      font-size: 12px;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+    .ind-value {
+      font-size: 13px;
+      font-weight: 600;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .ind-tag {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 1px 7px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .tag-warn  { background: rgba(239,68,68,.15);   color: var(--red); }
+    .tag-ok    { background: rgba(16,185,129,.15);  color: var(--green); }
+    .tag-info  { background: rgba(148,163,184,.12); color: var(--muted); }
+    .tag-blue  { background: rgba(59,130,246,.15);  color: var(--blue); }
+
+    /* State 체크 행 */
+    .state-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(51,65,85,0.4);
+      gap: 8px;
+    }
+    .state-row:last-child { border-bottom: none; }
+    .state-row.trigger-row {
+      padding: 8px 0 5px;
+      font-weight: 700;
+    }
+    .state-label { font-size: 12px; color: var(--muted); flex-shrink: 0; }
+    .check-y { color: var(--green); font-size: 13px; font-weight: 700; }
+    .check-n { color: var(--muted); font-size: 13px; }
+    .trigger-yes { color: var(--red); font-size: 13px; font-weight: 700; }
+    .trigger-no  { color: var(--muted); font-size: 13px; }
+    .state-sep {
+      margin: 10px 0 6px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.4px;
+    }
+
     /* ── 반응형 ── */
+    @media (max-width: 700px) {
+      .indicators-grid { grid-template-columns: 1fr; }
+    }
     @media (max-width: 600px) {
       .card .value { font-size: 22px; }
       td, th { padding: 8px 8px; font-size: 12px; }
@@ -233,6 +319,20 @@
         <div class="label">전략</div>
         <div class="value" style="font-size:16px; margin-top:4px;">4-Regime v5i</div>
         <div class="sub">TQQQ / PSQ / SGOV</div>
+      </div>
+    </div>
+
+    <!-- 지표 패널 -->
+    <div class="indicators-grid" id="indicators-wrap" style="display:none">
+      <!-- 주요 지표 -->
+      <div class="ind-box">
+        <h2>📊 주요 지표</h2>
+        <div id="ind-content"><!-- JS 렌더 --></div>
+      </div>
+      <!-- State 조건 체크 -->
+      <div class="ind-box">
+        <h2>🔍 State 조건 체크</h2>
+        <div id="state-content"><!-- JS 렌더 --></div>
       </div>
     </div>
 
@@ -439,6 +539,74 @@
     return v > 0 ? 'positive' : v < 0 ? 'negative' : 'neutral';
   }
 
+  // ── 지표 패널 렌더 ────────────────────────────────────
+  function row(label, valueHtml) {
+    return `<div class="ind-row"><span class="ind-label">${label}</span><span class="ind-value">${valueHtml}</span></div>`;
+  }
+  function stateRow(label, isY, isTriggered = false) {
+    if (isTriggered) {
+      return `<div class="state-row trigger-row"><span class="state-label">${label}</span><span class="${isY ? 'trigger-yes' : 'trigger-no'}">${isY ? 'YES ★' : 'no'}</span></div>`;
+    }
+    return `<div class="state-row"><span class="state-label">${label}</span><span class="${isY ? 'check-y' : 'check-n'}">${isY ? 'Y ✔' : 'N ✗'}</span></div>`;
+  }
+
+  function renderIndicators(ind) {
+    if (!ind) return;
+    document.getElementById('indicators-wrap').style.display = 'grid';
+
+    // ── 주요 지표
+    const vixTag  = ind.vix_shock
+      ? `<span class="ind-tag tag-warn">⚠ BB상단(${ind.vix_bb_upper}) 초과</span>`
+      : `<span class="ind-tag tag-info">BB상단 ${ind.vix_bb_upper}</span>`;
+    const tsTag   = ind.term_structure > 1.0
+      ? `<span class="ind-tag tag-warn">⚠ 패닉(역전)</span>`
+      : `<span class="ind-tag tag-ok">✔ 정상</span>`;
+    const vixDTag = ind.vix_declining
+      ? `<span class="ind-tag tag-ok">↓ 하강 중</span>`
+      : `<span class="ind-tag tag-warn">↑ 상승 중</span>`;
+    const qqqTag  = ind.qqq_below_ma50
+      ? `<span class="ind-tag tag-warn">↓ MA50 아래</span>`
+      : `<span class="ind-tag tag-ok">↑ MA50 위</span>`;
+    const wtiTag  = ind.wti_shock
+      ? `<span class="ind-tag tag-warn">⚠ 95pct(${ind.wti_95pct.toFixed(1)}%) 초과</span>`
+      : `<span class="ind-tag tag-ok">정상</span>`;
+
+    document.getElementById('ind-content').innerHTML = [
+      row('VIX 현재값',          `${ind.vix.toFixed(2)} ${vixTag}`),
+      row('Term Structure',       `${ind.term_structure.toFixed(4)} ${tsTag}`),
+      row('VIX3M',                `${ind.vix3m.toFixed(2)}`),
+      row('VIX 방향',             vixDTag),
+      row('QQQ 종가',             `$${ind.qqq.toFixed(2)} ${qqqTag}`),
+      row('QQQ 50일 이평선',      `$${ind.qqq_ma50.toFixed(2)}`),
+      row('TQQQ 이탈 기준선',     `$${ind.qqq_exit_threshold.toFixed(2)} <span style="font-size:11px;color:var(--muted)">(MA50×0.98)</span>`),
+      row('WTI 20일 수익률',      `${ind.wti_roc_20 >= 0 ? '+' : ''}${ind.wti_roc_20.toFixed(2)}% ${wtiTag}`),
+    ].join('');
+
+    // ── State 조건 체크
+    const sc3d = (ind.sc_raw_3d || [false,false,false]).map(v => v ? 'Y' : 'N').join(' ');
+    const exitTag = ind.tqqq_exit_2day
+      ? `<span class="trigger-yes">YES → SGOV 전환</span>`
+      : `<span class="trigger-no">no</span>`;
+
+    document.getElementById('state-content').innerHTML = [
+      `<div class="state-sep">State A</div>`,
+      stateRow(`VIX > BB상단(${ind.vix_bb_upper})`, ind.vix_shock),
+      stateRow(`WTI > 95pct(${ind.wti_95pct.toFixed(1)}%)`, ind.wti_shock),
+      stateRow('QQQ < MA50', ind.qqq_below_ma50),
+      stateRow('▶ State A 발동', ind.state_a, true),
+      `<div class="state-sep">State B</div>`,
+      stateRow('최근5일 TS역전 있음', ind.state_b_ts_recent),
+      stateRow('현재 TS < 1.0', ind.state_b_ts_normalized),
+      stateRow('▶ State B 발동', ind.state_b, true),
+      `<div class="state-sep">State C</div>`,
+      stateRow('VIX 하강 필터', ind.state_c_vix_declining),
+      `<div class="state-row"><span class="state-label">최근 3일 sc_raw</span><span class="ind-value" style="font-size:12px;font-family:monospace">[${sc3d}]</span></div>`,
+      stateRow('▶ State C 3일 확인 진입', ind.state_c, true),
+      `<div class="state-sep">TQQQ 이탈</div>`,
+      `<div class="state-row"><span class="state-label">QQQ<$${ind.qqq_exit_threshold.toFixed(2)} 2일연속</span>${exitTag}</div>`,
+    ].join('');
+  }
+
   // ── 메인 ──────────────────────────────────────────────
   async function init() {
     try {
@@ -450,6 +618,7 @@
       document.getElementById('updated-at').textContent = '업데이트: ' + (s.updated_at || '—');
 
       renderCards(s);
+      renderIndicators(data.indicators || null);
       renderChart(data.nav_history || []);
       renderTable(data.trade_log || []);
     } catch (e) {

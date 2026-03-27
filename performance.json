@@ -208,5 +208,29 @@
     "trade_count": 5,
     "days_running": 14,
     "deposit_count": 4
+  },
+  "indicators": {
+    "date": "2026-03-27",
+    "vix": 28.28,
+    "vix3m": 27.50,
+    "vix_bb_upper": 29.8,
+    "vix_shock": false,
+    "vix_declining": false,
+    "term_structure": 1.0284,
+    "qqq": 574.43,
+    "qqq_ma50": 607.62,
+    "qqq_exit_threshold": 595.47,
+    "qqq_below_ma50": true,
+    "wti_roc_20": 44.58,
+    "wti_95pct": 34.5,
+    "wti_shock": true,
+    "state_a": true,
+    "state_b": false,
+    "state_b_ts_recent": true,
+    "state_b_ts_normalized": false,
+    "state_c": false,
+    "state_c_vix_declining": false,
+    "sc_raw_3d": [false, false, false],
+    "tqqq_exit_2day": true
   }
 }
