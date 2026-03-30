@@ -87,6 +87,14 @@
       "state": "A",
       "cash": 1329.22,
       "remaining_cash": 72.18
+    },
+    {
+      "date": "2026-03-31",
+      "nav": 5772.7,
+      "ticker": "PSQ",
+      "state": "A",
+      "cash": 69.85,
+      "remaining_cash": 3.16
     }
   ],
   "trade_log": [
@@ -188,6 +196,15 @@
       "state": "A",
       "nav": 5728.86,
       "strategy_return_pct": 3.27
+    },
+    {
+      "date": "2026-03-31",
+      "action": "add",
+      "from_ticker": "PSQ",
+      "to_ticker": "PSQ",
+      "state": "A",
+      "nav": 5772.7,
+      "strategy_return_pct": 4.06
     }
   ],
   "deposits": [
@@ -218,33 +235,33 @@
     }
   ],
   "summary": {
-    "updated_at": "2026-03-28 04:50 KST",
+    "updated_at": "2026-03-31 04:50 KST",
     "strategy": "4-Regime v5k",
     "current_ticker": "PSQ",
     "current_state": "A",
     "total_invested": 5547.33,
-    "current_nav": 5728.86,
-    "strategy_return_pct": 3.27,
-    "peak_nav": 5728.86,
+    "current_nav": 5772.7,
+    "strategy_return_pct": 4.06,
+    "peak_nav": 5772.7,
     "max_drawdown_pct": -1.46,
-    "trade_count": 5,
-    "days_running": 15,
+    "trade_count": 6,
+    "days_running": 18,
     "deposit_count": 5
   },
   "indicators": {
-    "date": "2026-03-28",
-    "vix": 31.0,
-    "vix3m": 29.040000915527344,
-    "vix_bb_upper": 30.385776368686372,
+    "date": "2026-03-31",
+    "vix": 31.3799991607666,
+    "vix3m": 29.3700008392334,
+    "vix_bb_upper": 31.21843141269289,
     "vix_shock": true,
     "vix_declining": false,
-    "term_structure": 1.0674930792934194,
-    "qqq": 561.97998046875,
-    "qqq_ma50": 606.4579992675781,
-    "qqq_exit_threshold": 594.33,
+    "term_structure": 1.0684371216921513,
+    "qqq": 557.5999755859375,
+    "qqq_ma50": 605.1863989257813,
+    "qqq_exit_threshold": 593.08,
     "qqq_below_ma50": true,
-    "wti_roc_20": 49.656830909636284,
-    "wti_95pct": 37.155153120235575,
+    "wti_roc_20": 45.96377414122723,
+    "wti_95pct": 39.25485845771182,
     "wti_shock": true,
     "state_a": true,
     "state_b": false,
