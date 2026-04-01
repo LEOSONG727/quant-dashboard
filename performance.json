@@ -106,11 +106,11 @@
     },
     {
       "date": "2026-04-02",
-      "nav": 5518.24,
-      "ticker": "SGOV",
-      "state": "D",
+      "nav": 20.41,
+      "ticker": "TQQQ",
+      "state": "B",
       "cash": 20.41,
-      "remaining_cash": 297.96
+      "remaining_cash": 20.41
     }
   ],
   "trade_log": [
@@ -233,12 +233,12 @@
     },
     {
       "date": "2026-04-02",
-      "action": "buy",
-      "from_ticker": "TQQQ",
-      "to_ticker": "SGOV",
-      "state": "D",
-      "nav": 5518.24,
-      "strategy_return_pct": -0.52
+      "action": "hold",
+      "from_ticker": "-",
+      "to_ticker": "TQQQ",
+      "state": "B",
+      "nav": 20.41,
+      "strategy_return_pct": -99.63
     }
   ],
   "deposits": [
@@ -269,32 +269,32 @@
     }
   ],
   "summary": {
-    "updated_at": "2026-04-02 04:50 KST",
+    "updated_at": "2026-04-02 06:04 KST",
     "strategy": "4-Regime v5k",
-    "current_ticker": "SGOV",
-    "current_state": "D",
+    "current_ticker": "TQQQ",
+    "current_state": "B",
     "total_invested": 5547.33,
-    "current_nav": 5518.24,
-    "strategy_return_pct": -0.52,
+    "current_nav": 20.41,
+    "strategy_return_pct": -99.63,
     "peak_nav": 5772.7,
-    "max_drawdown_pct": -4.41,
-    "trade_count": 8,
+    "max_drawdown_pct": -99.65,
+    "trade_count": 9,
     "days_running": 20,
     "deposit_count": 5
   },
   "indicators": {
     "date": "2026-04-02",
-    "vix": 24.459999084472656,
-    "vix3m": 25.0,
-    "vix_bb_upper": 30.715945735841537,
+    "vix": 24.530000686645508,
+    "vix3m": 24.969999313354492,
+    "vix_bb_upper": 30.71443520493391,
     "vix_shock": false,
     "vix_declining": true,
-    "term_structure": 0.9783999633789062,
-    "qqq": 584.5599975585938,
-    "qqq_ma50": 603.2042236328125,
-    "qqq_exit_threshold": 591.14,
+    "term_structure": 0.9823789091386292,
+    "qqq": 584.2899780273438,
+    "qqq_ma50": 603.1988232421875,
+    "qqq_exit_threshold": 591.13,
     "qqq_below_ma50": true,
-    "wti_roc_20": 32.681479640574395,
+    "wti_roc_20": 32.45378320257972,
     "wti_95pct": 39.25485845771182,
     "wti_shock": false,
     "state_a": false,
