@@ -103,6 +103,14 @@
       "state": "B",
       "cash": 3.05,
       "remaining_cash": 238.11
+    },
+    {
+      "date": "2026-04-02",
+      "nav": 5518.24,
+      "ticker": "SGOV",
+      "state": "D",
+      "cash": 20.41,
+      "remaining_cash": 297.96
     }
   ],
   "trade_log": [
@@ -222,6 +230,15 @@
       "state": "B",
       "nav": 5560.68,
       "strategy_return_pct": 0.24
+    },
+    {
+      "date": "2026-04-02",
+      "action": "buy",
+      "from_ticker": "TQQQ",
+      "to_ticker": "SGOV",
+      "state": "D",
+      "nav": 5518.24,
+      "strategy_return_pct": -0.52
     }
   ],
   "deposits": [
@@ -252,32 +269,32 @@
     }
   ],
   "summary": {
-    "updated_at": "2026-04-01 04:50 KST",
+    "updated_at": "2026-04-02 04:50 KST",
     "strategy": "4-Regime v5k",
-    "current_ticker": "TQQQ",
-    "current_state": "B",
+    "current_ticker": "SGOV",
+    "current_state": "D",
     "total_invested": 5547.33,
-    "current_nav": 5560.68,
-    "strategy_return_pct": 0.24,
+    "current_nav": 5518.24,
+    "strategy_return_pct": -0.52,
     "peak_nav": 5772.7,
-    "max_drawdown_pct": -3.67,
-    "trade_count": 7,
-    "days_running": 19,
+    "max_drawdown_pct": -4.41,
+    "trade_count": 8,
+    "days_running": 20,
     "deposit_count": 5
   },
   "indicators": {
-    "date": "2026-04-01",
-    "vix": 25.3700008392334,
-    "vix3m": 25.68000030517578,
-    "vix_bb_upper": 31.0088376467697,
+    "date": "2026-04-02",
+    "vix": 24.459999084472656,
+    "vix3m": 25.0,
+    "vix_bb_upper": 30.715945735841537,
     "vix_shock": false,
     "vix_declining": true,
-    "term_structure": 0.9879283698497503,
-    "qqq": 578.1599731445312,
-    "qqq_ma50": 603.6785083007812,
-    "qqq_exit_threshold": 591.6,
+    "term_structure": 0.9783999633789062,
+    "qqq": 584.5599975585938,
+    "qqq_ma50": 603.2042236328125,
+    "qqq_exit_threshold": 591.14,
     "qqq_below_ma50": true,
-    "wti_roc_20": 36.81599446950739,
+    "wti_roc_20": 32.681479640574395,
     "wti_95pct": 39.25485845771182,
     "wti_shock": false,
     "state_a": false,
