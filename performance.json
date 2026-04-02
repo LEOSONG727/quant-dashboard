@@ -239,6 +239,17 @@
       "state": "B",
       "nav": 20.41,
       "strategy_return_pct": -99.63
+    },
+    {
+      "date": "2026-04-03",
+      "action": "deposit",
+      "from_ticker": "-",
+      "to_ticker": "TQQQ",
+      "state": "B",
+      "nav": 20.41,
+      "strategy_return_pct": -99.69,
+      "deposit_amount": 992.41,
+      "note": "추가입금 자동 감지 ($1012.82 - $20.41)"
     }
   ],
   "deposits": [
@@ -266,21 +277,26 @@
       "date": "2026-03-28",
       "amount": 1320.74,
       "note": "추가입금 자동 감지 ($1329.22 - $8.48)"
+    },
+    {
+      "date": "2026-04-03",
+      "amount": 992.41,
+      "note": "추가입금 자동 감지 ($1012.82 - $20.41)"
     }
   ],
   "summary": {
-    "updated_at": "2026-04-02 06:04 KST",
+    "updated_at": "2026-04-03 04:50 KST",
     "strategy": "4-Regime v5k",
     "current_ticker": "TQQQ",
     "current_state": "B",
-    "total_invested": 5547.33,
+    "total_invested": 6539.74,
     "current_nav": 20.41,
-    "strategy_return_pct": -99.63,
+    "strategy_return_pct": -99.69,
     "peak_nav": 5772.7,
     "max_drawdown_pct": -99.65,
-    "trade_count": 9,
-    "days_running": 20,
-    "deposit_count": 5
+    "trade_count": 8,
+    "days_running": 21,
+    "deposit_count": 6
   },
   "indicators": {
     "date": "2026-04-02",
