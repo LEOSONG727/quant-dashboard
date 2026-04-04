@@ -106,7 +106,7 @@
     },
     {
       "date": "2026-04-02",
-      "nav": 20.41,
+      "nav": 5590.9,
       "ticker": "TQQQ",
       "state": "B",
       "cash": 20.41,
@@ -245,8 +245,8 @@
       "from_ticker": "-",
       "to_ticker": "TQQQ",
       "state": "B",
-      "nav": 20.41,
-      "strategy_return_pct": -99.63
+      "nav": 5590.9,
+      "strategy_return_pct": 0.79
     },
     {
       "date": "2026-04-03",
@@ -291,7 +291,7 @@
     }
   ],
   "summary": {
-    "updated_at": "2026-04-03 06:52 KST",
+    "updated_at": "2026-04-04 09:06 KST",
     "strategy": "4-Regime v5k",
     "current_ticker": "SGOV",
     "current_state": "D",
@@ -299,7 +299,7 @@
     "current_nav": 6638.47,
     "strategy_return_pct": 1.51,
     "peak_nav": 6638.47,
-    "max_drawdown_pct": -99.65,
+    "max_drawdown_pct": -3.67,
     "trade_count": 9,
     "days_running": 21,
     "deposit_count": 6
