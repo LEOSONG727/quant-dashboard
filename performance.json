@@ -127,6 +127,38 @@
       "state": "B",
       "cash": 357.44,
       "remaining_cash": 274.48
+    },
+    {
+      "date": "2026-04-15",
+      "nav": 6222.34,
+      "ticker": "TQQQ",
+      "state": "C",
+      "cash": 0.0,
+      "remaining_cash": 251.61
+    },
+    {
+      "date": "2026-04-16",
+      "nav": 6230.56,
+      "ticker": "TQQQ",
+      "state": "C",
+      "cash": 0.0,
+      "remaining_cash": 0.0
+    },
+    {
+      "date": "2026-04-17",
+      "nav": 6541.4,
+      "ticker": "TQQQ",
+      "state": "C",
+      "cash": 230.2,
+      "remaining_cash": 60.95
+    },
+    {
+      "date": "2026-04-18",
+      "nav": 6788.18,
+      "ticker": "TQQQ",
+      "state": "C",
+      "cash": 60.68,
+      "remaining_cash": 60.68
     }
   ],
   "trade_log": [
@@ -273,6 +305,53 @@
       "state": "B",
       "nav": 6666.8,
       "strategy_return_pct": 1.94
+    },
+    {
+      "date": "2026-04-14",
+      "action": "withdrawal",
+      "from_ticker": "-",
+      "to_ticker": "TQQQ",
+      "state": "B",
+      "nav": 6666.8,
+      "strategy_return_pct": 6.33,
+      "deposit_amount": -269.76,
+      "note": "출금 (40만원 KRW @ 1,482.78)"
+    },
+    {
+      "date": "2026-04-15",
+      "action": "buy",
+      "from_ticker": "BIL",
+      "to_ticker": "TQQQ",
+      "state": "C",
+      "nav": 6222.34,
+      "strategy_return_pct": -0.76
+    },
+    {
+      "date": "2026-04-16",
+      "action": "hold",
+      "from_ticker": "TQQQ",
+      "to_ticker": "TQQQ",
+      "state": "C",
+      "nav": 6230.56,
+      "strategy_return_pct": -0.63
+    },
+    {
+      "date": "2026-04-17",
+      "action": "add",
+      "from_ticker": "TQQQ",
+      "to_ticker": "TQQQ",
+      "state": "C",
+      "nav": 6541.4,
+      "strategy_return_pct": 0.63
+    },
+    {
+      "date": "2026-04-18",
+      "action": "hold",
+      "from_ticker": "TQQQ",
+      "to_ticker": "TQQQ",
+      "state": "C",
+      "nav": 6788.18,
+      "strategy_return_pct": 4.43
     }
   ],
   "deposits": [
@@ -305,48 +384,58 @@
       "date": "2026-04-03",
       "amount": 992.41,
       "note": "추가입금 자동 감지 ($1012.82 - $20.41)"
+    },
+    {
+      "date": "2026-04-14",
+      "amount": -269.76,
+      "note": "출금 (40만원 KRW @ 1,482.78)"
+    },
+    {
+      "date": "2026-04-17",
+      "amount": 230.2,
+      "note": "추가입금 자동 감지 ($230.20 - $0.00)"
     }
   ],
   "summary": {
-    "updated_at": "2026-04-07 04:50 KST",
+    "updated_at": "2026-04-18 04:50 KST",
     "strategy": "4-Regime v5k",
     "current_ticker": "TQQQ",
-    "current_state": "B",
-    "total_invested": 6539.74,
-    "current_nav": 6666.8,
-    "strategy_return_pct": 1.94,
-    "peak_nav": 6666.8,
-    "max_drawdown_pct": -3.67,
-    "trade_count": 9,
-    "days_running": 25,
-    "deposit_count": 6
+    "current_state": "C",
+    "total_invested": 6500.18,
+    "current_nav": 6788.18,
+    "strategy_return_pct": 4.43,
+    "peak_nav": 6788.18,
+    "max_drawdown_pct": -4.2,
+    "trade_count": 13,
+    "days_running": 36,
+    "deposit_count": 8
   },
   "indicators": {
-    "date": "2026-04-07",
-    "vix": 24.440000534057617,
-    "vix3m": 24.90999984741211,
-    "vix_bb_upper": 30.21718957789255,
+    "date": "2026-04-18",
+    "vix": 17.65999984741211,
+    "vix3m": 20.6299991607666,
+    "vix_bb_upper": 31.973587209167228,
     "vix_shock": false,
     "vix_declining": true,
-    "term_structure": 0.981132102921176,
-    "qqq": 588.4205932617188,
-    "qqq_ma50": 601.9575915527344,
-    "qqq_exit_threshold": 589.92,
-    "qqq_below_ma50": true,
-    "wti_roc_20": 24.015403151384728,
+    "term_structure": 0.8560349280574509,
+    "qqq": 648.4210205078125,
+    "qqq_ma50": 601.6201538085937,
+    "qqq_exit_threshold": 589.59,
+    "qqq_below_ma50": false,
+    "wti_roc_20": -13.771580973397747,
     "wti_95pct": 39.25485845771182,
     "wti_shock": false,
     "state_a": false,
-    "state_b": true,
-    "state_b_ts_recent": true,
+    "state_b": false,
+    "state_b_ts_recent": false,
     "state_b_ts_normalized": true,
-    "state_c": false,
+    "state_c": true,
     "state_c_vix_declining": true,
     "sc_raw_3d": [
-      false,
-      false,
-      false
+      true,
+      true,
+      true
     ],
-    "tqqq_exit_2day": true
+    "tqqq_exit_2day": false
   }
 }
