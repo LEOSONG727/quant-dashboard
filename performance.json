@@ -159,6 +159,14 @@
       "state": "C",
       "cash": 60.68,
       "remaining_cash": 60.68
+    },
+    {
+      "date": "2026-04-21",
+      "nav": 6720.33,
+      "ticker": "TQQQ",
+      "state": "C_wait",
+      "cash": 60.68,
+      "remaining_cash": 2.75
     }
   ],
   "trade_log": [
@@ -352,6 +360,15 @@
       "state": "C",
       "nav": 6788.18,
       "strategy_return_pct": 4.43
+    },
+    {
+      "date": "2026-04-21",
+      "action": "add",
+      "from_ticker": "TQQQ",
+      "to_ticker": "TQQQ",
+      "state": "C_wait",
+      "nav": 6720.33,
+      "strategy_return_pct": 3.39
     }
   ],
   "deposits": [
@@ -397,44 +414,44 @@
     }
   ],
   "summary": {
-    "updated_at": "2026-04-18 04:50 KST",
+    "updated_at": "2026-04-21 04:50 KST",
     "strategy": "4-Regime v5k",
     "current_ticker": "TQQQ",
-    "current_state": "C",
+    "current_state": "C_wait",
     "total_invested": 6500.18,
-    "current_nav": 6788.18,
-    "strategy_return_pct": 4.43,
+    "current_nav": 6720.33,
+    "strategy_return_pct": 3.39,
     "peak_nav": 6788.18,
     "max_drawdown_pct": -4.2,
     "trade_count": 13,
-    "days_running": 36,
+    "days_running": 39,
     "deposit_count": 8
   },
   "indicators": {
-    "date": "2026-04-18",
-    "vix": 17.65999984741211,
-    "vix3m": 20.6299991607666,
-    "vix_bb_upper": 31.973587209167228,
+    "date": "2026-04-21",
+    "vix": 19.1299991607666,
+    "vix3m": 21.34000015258789,
+    "vix_bb_upper": 31.662809485876167,
     "vix_shock": false,
-    "vix_declining": true,
-    "term_structure": 0.8560349280574509,
-    "qqq": 648.4210205078125,
-    "qqq_ma50": 601.6201538085937,
-    "qqq_exit_threshold": 589.59,
+    "vix_declining": false,
+    "term_structure": 0.8964385671968571,
+    "qqq": 646.2349853515625,
+    "qqq_ma50": 602.6278686523438,
+    "qqq_exit_threshold": 590.58,
     "qqq_below_ma50": false,
-    "wti_roc_20": -13.771580973397747,
+    "wti_roc_20": -11.493086947550779,
     "wti_95pct": 39.25485845771182,
     "wti_shock": false,
     "state_a": false,
     "state_b": false,
     "state_b_ts_recent": false,
     "state_b_ts_normalized": true,
-    "state_c": true,
-    "state_c_vix_declining": true,
+    "state_c": false,
+    "state_c_vix_declining": false,
     "sc_raw_3d": [
       true,
       true,
-      true
+      false
     ],
     "tqqq_exit_2day": false
   }
