@@ -667,12 +667,14 @@
     },
     {
       "date": "2026-05-13",
-      "action": "buy",
-      "from_ticker": "BIL",
+      "action": "deposit",
+      "from_ticker": "-",
       "to_ticker": "SGOV",
       "state": "D",
-      "nav": 9541.66,
-      "strategy_return_pct": 41.42
+      "nav": 12195.42,
+      "strategy_return_pct": 49.61,
+      "deposit_amount": 1404.25,
+      "note": "추가입금 수동 보정 (NAV 기반 역산, BIL 수동매수로 자동감지 누락)"
     },
     {
       "date": "2026-05-14",
@@ -756,21 +758,26 @@
       "date": "2026-05-12",
       "amount": 246.87,
       "note": "추가입금 자동 감지 ($636.87 - $390.00)"
+    },
+    {
+      "date": "2026-05-13",
+      "amount": 1404.25,
+      "note": "추가입금 수동 보정 (NAV 기반 역산, BIL 수동매수로 자동감지 누락)"
     }
   ],
   "summary": {
-    "updated_at": "2026-05-19 04:50 KST",
+    "updated_at": "2026-05-19 15:03 KST",
     "strategy": "4-Regime v5k",
     "current_ticker": "SGOV",
     "current_state": "D",
-    "total_invested": 6747.05,
+    "total_invested": 8151.3,
     "current_nav": 12195.42,
-    "strategy_return_pct": 80.75,
+    "strategy_return_pct": 49.61,
     "peak_nav": 12195.42,
     "max_drawdown_pct": -4.79,
-    "trade_count": 22,
-    "days_running": 67,
-    "deposit_count": 9
+    "trade_count": 23,
+    "days_running": 61,
+    "deposit_count": 10
   },
   "indicators": {
     "date": "2026-05-19",
