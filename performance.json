@@ -327,6 +327,14 @@
       "state": "D",
       "cash": 21.27,
       "remaining_cash": 21.27
+    },
+    {
+      "date": "2026-05-20",
+      "nav": 12206.06,
+      "ticker": "SGOV",
+      "state": "D",
+      "cash": 29.24,
+      "remaining_cash": 29.24
     }
   ],
   "trade_log": [
@@ -713,6 +721,15 @@
       "strategy_return_pct": 12.98,
       "deposit_amount": 2642.75,
       "note": "추가입금 수동 보정 400만원 (BIL 수동매수로 자동감지 누락)"
+    },
+    {
+      "date": "2026-05-20",
+      "action": "buy",
+      "from_ticker": "BIL",
+      "to_ticker": "SGOV",
+      "state": "D",
+      "nav": 12206.06,
+      "strategy_return_pct": 13.08
     }
   ],
   "deposits": [
@@ -773,32 +790,32 @@
     }
   ],
   "summary": {
-    "updated_at": "2026-05-19 15:03 KST",
+    "updated_at": "2026-05-20 04:50 KST",
     "strategy": "4-Regime v5k",
     "current_ticker": "SGOV",
     "current_state": "D",
     "total_invested": 10794.05,
-    "current_nav": 12195.42,
-    "strategy_return_pct": 12.98,
-    "peak_nav": 12195.42,
+    "current_nav": 12206.06,
+    "strategy_return_pct": 13.08,
+    "peak_nav": 12206.06,
     "max_drawdown_pct": -4.79,
-    "trade_count": 22,
-    "days_running": 67,
+    "trade_count": 21,
+    "days_running": 68,
     "deposit_count": 11
   },
   "indicators": {
-    "date": "2026-05-19",
-    "vix": 18.3,
-    "vix3m": 21.15,
+    "date": "2026-05-20",
+    "vix": 18.08,
+    "vix3m": 21.11,
     "vix_bb_upper": 22.0,
     "vix_shock": false,
     "vix_declining": false,
-    "term_structure": 0.8652,
-    "qqq": 704.91,
-    "qqq_ma50": 633.41,
-    "qqq_exit_threshold": 620.74,
+    "term_structure": 0.8565,
+    "qqq": 700.94,
+    "qqq_ma50": 635.31,
+    "qqq_exit_threshold": 622.6,
     "qqq_below_ma50": false,
-    "wti_roc_20": 13.53,
+    "wti_roc_20": 13.38,
     "wti_95pct": 39.25,
     "wti_shock": false,
     "state_a": false,
@@ -808,7 +825,7 @@
     "state_c": false,
     "state_c_vix_declining": false,
     "sc_raw_3d": [
-      true,
+      false,
       false,
       false
     ],
