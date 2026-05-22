@@ -351,6 +351,14 @@
       "state": "D",
       "cash": 29.24,
       "remaining_cash": 29.24
+    },
+    {
+      "date": "2026-05-23",
+      "nav": 12212.04,
+      "ticker": "TQQQ",
+      "state": "C",
+      "cash": 29.24,
+      "remaining_cash": 537.63
     }
   ],
   "trade_log": [
@@ -764,6 +772,15 @@
       "state": "D",
       "nav": 12208.04,
       "strategy_return_pct": 13.1
+    },
+    {
+      "date": "2026-05-23",
+      "action": "buy",
+      "from_ticker": "BIL",
+      "to_ticker": "TQQQ",
+      "state": "C",
+      "nav": 12212.04,
+      "strategy_return_pct": 13.14
     }
   ],
   "deposits": [
@@ -824,42 +841,42 @@
     }
   ],
   "summary": {
-    "updated_at": "2026-05-22 04:50 KST",
+    "updated_at": "2026-05-23 04:50 KST",
     "strategy": "4-Regime v5k",
-    "current_ticker": "SGOV",
-    "current_state": "D",
+    "current_ticker": "TQQQ",
+    "current_state": "C",
     "total_invested": 10794.05,
-    "current_nav": 12208.04,
-    "strategy_return_pct": 13.1,
-    "peak_nav": 12208.04,
+    "current_nav": 12212.04,
+    "strategy_return_pct": 13.14,
+    "peak_nav": 12212.04,
     "max_drawdown_pct": -4.79,
-    "trade_count": 23,
-    "days_running": 70,
+    "trade_count": 24,
+    "days_running": 71,
     "deposit_count": 11
   },
   "indicators": {
-    "date": "2026-05-22",
-    "vix": 16.75,
-    "vix3m": 20.05,
+    "date": "2026-05-23",
+    "vix": 16.83,
+    "vix3m": 20.06,
     "vix_bb_upper": 22.0,
     "vix_shock": false,
     "vix_declining": true,
-    "term_structure": 0.8354,
-    "qqq": 714.34,
-    "qqq_ma50": 639.59,
-    "qqq_exit_threshold": 626.8,
+    "term_structure": 0.839,
+    "qqq": 717.49,
+    "qqq_ma50": 642.01,
+    "qqq_exit_threshold": 629.17,
     "qqq_below_ma50": false,
-    "wti_roc_20": 1.31,
+    "wti_roc_20": 2.47,
     "wti_95pct": 39.25,
     "wti_shock": false,
     "state_a": false,
     "state_b": false,
     "state_b_ts_recent": false,
     "state_b_ts_normalized": true,
-    "state_c": false,
+    "state_c": true,
     "state_c_vix_declining": true,
     "sc_raw_3d": [
-      false,
+      true,
       true,
       true
     ],
