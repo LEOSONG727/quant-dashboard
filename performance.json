@@ -359,6 +359,14 @@
       "state": "C",
       "cash": 29.24,
       "remaining_cash": 537.63
+    },
+    {
+      "date": "2026-05-26",
+      "nav": 12052.82,
+      "ticker": "TQQQ",
+      "state": "C",
+      "cash": 0.0,
+      "remaining_cash": 0.0
     }
   ],
   "trade_log": [
@@ -781,6 +789,15 @@
       "state": "C",
       "nav": 12212.04,
       "strategy_return_pct": 13.14
+    },
+    {
+      "date": "2026-05-26",
+      "action": "buy",
+      "from_ticker": "SGOV",
+      "to_ticker": "TQQQ",
+      "state": "C",
+      "nav": 12052.82,
+      "strategy_return_pct": 11.66
     }
   ],
   "deposits": [
@@ -841,17 +858,17 @@
     }
   ],
   "summary": {
-    "updated_at": "2026-05-23 04:50 KST",
+    "updated_at": "2026-05-26 18:15 KST",
     "strategy": "4-Regime v5k",
     "current_ticker": "TQQQ",
     "current_state": "C",
     "total_invested": 10794.05,
-    "current_nav": 12212.04,
-    "strategy_return_pct": 13.14,
+    "current_nav": 12052.82,
+    "strategy_return_pct": 11.66,
     "peak_nav": 12212.04,
     "max_drawdown_pct": -4.79,
-    "trade_count": 24,
-    "days_running": 71,
+    "trade_count": 25,
+    "days_running": 74,
     "deposit_count": 11
   },
   "indicators": {
