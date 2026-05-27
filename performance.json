@@ -815,6 +815,17 @@
       "state": "C",
       "nav": 12424.07,
       "strategy_return_pct": 15.1
+    },
+    {
+      "date": "2026-05-28",
+      "action": "deposit",
+      "from_ticker": "-",
+      "to_ticker": "TQQQ",
+      "state": "C",
+      "nav": 12424.07,
+      "strategy_return_pct": 14.28,
+      "deposit_amount": 77.56,
+      "note": "추가입금 자동 감지 ($106.80 - $29.24)"
     }
   ],
   "deposits": [
@@ -872,21 +883,26 @@
       "date": "2026-05-19",
       "amount": 2642.75,
       "note": "추가입금 수동 보정 400만원 (BIL 수동매수로 자동감지 누락)"
+    },
+    {
+      "date": "2026-05-28",
+      "amount": 77.56,
+      "note": "추가입금 자동 감지 ($106.80 - $29.24)"
     }
   ],
   "summary": {
-    "updated_at": "2026-05-27 04:50 KST",
+    "updated_at": "2026-05-28 04:50 KST",
     "strategy": "4-Regime v5k",
     "current_ticker": "TQQQ",
     "current_state": "C",
-    "total_invested": 10794.05,
+    "total_invested": 10871.61,
     "current_nav": 12424.07,
-    "strategy_return_pct": 15.1,
+    "strategy_return_pct": 14.28,
     "peak_nav": 12424.07,
     "max_drawdown_pct": -4.79,
     "trade_count": 26,
-    "days_running": 75,
-    "deposit_count": 11
+    "days_running": 76,
+    "deposit_count": 12
   },
   "indicators": {
     "date": "2026-05-27",
