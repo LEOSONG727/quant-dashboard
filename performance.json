@@ -375,6 +375,14 @@
       "state": "C",
       "cash": 29.24,
       "remaining_cash": 29.24
+    },
+    {
+      "date": "2026-05-28",
+      "nav": 12429.91,
+      "ticker": "TQQQ",
+      "state": "C",
+      "cash": 106.8,
+      "remaining_cash": 25.08
     }
   ],
   "trade_log": [
@@ -818,14 +826,12 @@
     },
     {
       "date": "2026-05-28",
-      "action": "deposit",
-      "from_ticker": "-",
+      "action": "add",
+      "from_ticker": "TQQQ",
       "to_ticker": "TQQQ",
       "state": "C",
-      "nav": 12424.07,
-      "strategy_return_pct": 14.28,
-      "deposit_amount": 77.56,
-      "note": "추가입금 자동 감지 ($106.80 - $29.24)"
+      "nav": 12429.91,
+      "strategy_return_pct": 14.33
     }
   ],
   "deposits": [
@@ -896,27 +902,27 @@
     "current_ticker": "TQQQ",
     "current_state": "C",
     "total_invested": 10871.61,
-    "current_nav": 12424.07,
-    "strategy_return_pct": 14.28,
-    "peak_nav": 12424.07,
+    "current_nav": 12429.91,
+    "strategy_return_pct": 14.33,
+    "peak_nav": 12429.91,
     "max_drawdown_pct": -4.79,
     "trade_count": 26,
     "days_running": 76,
     "deposit_count": 12
   },
   "indicators": {
-    "date": "2026-05-27",
-    "vix": 17.0,
-    "vix3m": 19.83,
+    "date": "2026-05-28",
+    "vix": 16.47,
+    "vix3m": 19.64,
     "vix_bb_upper": 22.0,
     "vix_shock": false,
     "vix_declining": true,
-    "term_structure": 0.8573,
-    "qqq": 730.65,
-    "qqq_ma50": 644.77,
-    "qqq_exit_threshold": 631.87,
+    "term_structure": 0.8386,
+    "qqq": 729.51,
+    "qqq_ma50": 647.36,
+    "qqq_exit_threshold": 634.41,
     "qqq_below_ma50": false,
-    "wti_roc_20": -2.7,
+    "wti_roc_20": -10.58,
     "wti_95pct": 39.25,
     "wti_shock": false,
     "state_a": false,
