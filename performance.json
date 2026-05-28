@@ -383,6 +383,14 @@
       "state": "C",
       "cash": 106.8,
       "remaining_cash": 25.08
+    },
+    {
+      "date": "2026-05-29",
+      "nav": 12753.43,
+      "ticker": "TQQQ",
+      "state": "C",
+      "cash": 24.95,
+      "remaining_cash": 24.95
     }
   ],
   "trade_log": [
@@ -832,6 +840,15 @@
       "state": "C",
       "nav": 12429.91,
       "strategy_return_pct": 14.33
+    },
+    {
+      "date": "2026-05-29",
+      "action": "hold",
+      "from_ticker": "TQQQ",
+      "to_ticker": "TQQQ",
+      "state": "C",
+      "nav": 12753.43,
+      "strategy_return_pct": 17.31
     }
   ],
   "deposits": [
@@ -897,32 +914,32 @@
     }
   ],
   "summary": {
-    "updated_at": "2026-05-28 04:50 KST",
+    "updated_at": "2026-05-29 04:50 KST",
     "strategy": "4-Regime v5k",
     "current_ticker": "TQQQ",
     "current_state": "C",
     "total_invested": 10871.61,
-    "current_nav": 12429.91,
-    "strategy_return_pct": 14.33,
-    "peak_nav": 12429.91,
+    "current_nav": 12753.43,
+    "strategy_return_pct": 17.31,
+    "peak_nav": 12753.43,
     "max_drawdown_pct": -4.79,
-    "trade_count": 26,
-    "days_running": 76,
+    "trade_count": 27,
+    "days_running": 77,
     "deposit_count": 12
   },
   "indicators": {
-    "date": "2026-05-28",
-    "vix": 16.47,
-    "vix3m": 19.64,
+    "date": "2026-05-29",
+    "vix": 15.67,
+    "vix3m": 19.12,
     "vix_bb_upper": 22.0,
     "vix_shock": false,
     "vix_declining": true,
-    "term_structure": 0.8386,
-    "qqq": 729.51,
-    "qqq_ma50": 647.36,
-    "qqq_exit_threshold": 634.41,
+    "term_structure": 0.8196,
+    "qqq": 735.62,
+    "qqq_ma50": 650.02,
+    "qqq_exit_threshold": 637.02,
     "qqq_below_ma50": false,
-    "wti_roc_20": -10.58,
+    "wti_roc_20": -16.52,
     "wti_95pct": 39.25,
     "wti_shock": false,
     "state_a": false,
