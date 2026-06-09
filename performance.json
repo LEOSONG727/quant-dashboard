@@ -968,6 +968,17 @@
       "state": "D",
       "nav": 18288.28,
       "strategy_return_pct": 2.42
+    },
+    {
+      "date": "2026-06-10",
+      "action": "deposit",
+      "from_ticker": "-",
+      "to_ticker": "SGOV",
+      "state": "D",
+      "nav": 18288.28,
+      "strategy_return_pct": -0.17,
+      "deposit_amount": 463.44,
+      "note": "추가입금 자동 감지 ($7960.03 - $7496.59)"
     }
   ],
   "deposits": [
@@ -1035,21 +1046,26 @@
       "date": "2026-06-09",
       "amount": 6985.27,
       "note": "추가입금 자동 감지 ($7496.59 - $511.32)"
+    },
+    {
+      "date": "2026-06-10",
+      "amount": 463.44,
+      "note": "추가입금 자동 감지 ($7960.03 - $7496.59)"
     }
   ],
   "summary": {
-    "updated_at": "2026-06-09 04:50 KST",
+    "updated_at": "2026-06-10 04:50 KST",
     "strategy": "4-Regime v5k",
     "current_ticker": "SGOV",
     "current_state": "D",
-    "total_invested": 17856.88,
+    "total_invested": 18320.32,
     "current_nav": 18288.28,
-    "strategy_return_pct": 2.42,
+    "strategy_return_pct": -0.17,
     "peak_nav": 18288.28,
     "max_drawdown_pct": -14.89,
-    "trade_count": 28,
-    "days_running": 88,
-    "deposit_count": 13
+    "trade_count": 29,
+    "days_running": 89,
+    "deposit_count": 14
   },
   "indicators": {
     "date": "2026-06-09",
