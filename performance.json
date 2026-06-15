@@ -479,6 +479,14 @@
       "state": "D",
       "cash": 7960.03,
       "remaining_cash": 7960.03
+    },
+    {
+      "date": "2026-06-16",
+      "nav": 18758.21,
+      "ticker": "TQQQ",
+      "state": "C",
+      "cash": 7960.03,
+      "remaining_cash": 760.67
     }
   ],
   "trade_log": [
@@ -1036,6 +1044,15 @@
       "state": "D",
       "nav": 18757.62,
       "strategy_return_pct": 2.39
+    },
+    {
+      "date": "2026-06-16",
+      "action": "buy",
+      "from_ticker": "BIL",
+      "to_ticker": "TQQQ",
+      "state": "C",
+      "nav": 18758.21,
+      "strategy_return_pct": 2.39
     }
   ],
   "deposits": [
@@ -1111,42 +1128,42 @@
     }
   ],
   "summary": {
-    "updated_at": "2026-06-13 04:50 KST",
+    "updated_at": "2026-06-16 04:50 KST",
     "strategy": "4-Regime v5k",
-    "current_ticker": "SGOV",
-    "current_state": "D",
+    "current_ticker": "TQQQ",
+    "current_state": "C",
     "total_invested": 18320.32,
-    "current_nav": 18757.62,
+    "current_nav": 18758.21,
     "strategy_return_pct": 2.39,
-    "peak_nav": 18757.62,
+    "peak_nav": 18758.21,
     "max_drawdown_pct": -14.89,
-    "trade_count": 32,
-    "days_running": 92,
+    "trade_count": 33,
+    "days_running": 95,
     "deposit_count": 14
   },
   "indicators": {
-    "date": "2026-06-13",
-    "vix": 18.38,
-    "vix3m": 20.87,
+    "date": "2026-06-16",
+    "vix": 16.13,
+    "vix3m": 19.42,
     "vix_bb_upper": 22.0,
     "vix_shock": false,
     "vix_declining": true,
-    "term_structure": 0.8807,
-    "qqq": 721.26,
-    "qqq_ma50": 681.81,
-    "qqq_exit_threshold": 668.17,
+    "term_structure": 0.8306,
+    "qqq": 743.15,
+    "qqq_ma50": 684.97,
+    "qqq_exit_threshold": 671.27,
     "qqq_below_ma50": false,
-    "wti_roc_20": -16.5,
+    "wti_roc_20": -22.87,
     "wti_95pct": 39.25,
     "wti_shock": false,
     "state_a": false,
     "state_b": false,
     "state_b_ts_recent": false,
     "state_b_ts_normalized": true,
-    "state_c": false,
+    "state_c": true,
     "state_c_vix_declining": true,
     "sc_raw_3d": [
-      false,
+      true,
       true,
       true
     ],
