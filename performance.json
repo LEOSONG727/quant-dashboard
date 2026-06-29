@@ -543,6 +543,14 @@
       "state": "D",
       "cash": 0.0,
       "remaining_cash": 0.0
+    },
+    {
+      "date": "2026-06-30",
+      "nav": 10446.39,
+      "ticker": "SGOV",
+      "state": "D",
+      "cash": 0.0,
+      "remaining_cash": 0.0
     }
   ],
   "trade_log": [
@@ -1172,6 +1180,15 @@
       "state": "D",
       "nav": 10445.82,
       "strategy_return_pct": -64.17
+    },
+    {
+      "date": "2026-06-30",
+      "action": "hold",
+      "from_ticker": "BIL",
+      "to_ticker": "SGOV",
+      "state": "D",
+      "nav": 10446.39,
+      "strategy_return_pct": -64.17
     }
   ],
   "deposits": [
@@ -1252,32 +1269,32 @@
     }
   ],
   "summary": {
-    "updated_at": "2026-06-27 04:50 KST",
+    "updated_at": "2026-06-30 04:50 KST",
     "strategy": "4-Regime v5k",
     "current_ticker": "SGOV",
     "current_state": "D",
     "total_invested": 29157.07,
-    "current_nav": 10445.82,
+    "current_nav": 10446.39,
     "strategy_return_pct": -64.17,
     "peak_nav": 18758.21,
     "max_drawdown_pct": -66.91,
     "trade_count": 36,
-    "days_running": 106,
+    "days_running": 109,
     "deposit_count": 15
   },
   "indicators": {
-    "date": "2026-06-27",
-    "vix": 18.72,
-    "vix3m": 20.24,
+    "date": "2026-06-30",
+    "vix": 17.61,
+    "vix3m": 19.52,
     "vix_bb_upper": 22.0,
     "vix_shock": false,
-    "vix_declining": false,
-    "term_structure": 0.9249,
-    "qqq": 709.52,
-    "qqq_ma50": 694.42,
-    "qqq_exit_threshold": 680.53,
+    "vix_declining": true,
+    "term_structure": 0.9022,
+    "qqq": 722.55,
+    "qqq_ma50": 703.76,
+    "qqq_exit_threshold": 689.68,
     "qqq_below_ma50": false,
-    "wti_roc_20": -28.04,
+    "wti_roc_20": -19.36,
     "wti_95pct": 39.25,
     "wti_shock": false,
     "state_a": false,
@@ -1285,10 +1302,10 @@
     "state_b_ts_recent": false,
     "state_b_ts_normalized": true,
     "state_c": false,
-    "state_c_vix_declining": false,
+    "state_c_vix_declining": true,
     "sc_raw_3d": [
       false,
-      true,
+      false,
       false
     ],
     "tqqq_exit_2day": false
