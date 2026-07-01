@@ -559,6 +559,14 @@
       "state": "D",
       "cash": 0.0,
       "remaining_cash": 0.0
+    },
+    {
+      "date": "2026-07-02",
+      "nav": 10418.46,
+      "ticker": "SGOV",
+      "state": "D",
+      "cash": 0.0,
+      "remaining_cash": 0.0
     }
   ],
   "trade_log": [
@@ -1206,6 +1214,15 @@
       "state": "D",
       "nav": 10446.97,
       "strategy_return_pct": -64.17
+    },
+    {
+      "date": "2026-07-02",
+      "action": "hold",
+      "from_ticker": "BIL",
+      "to_ticker": "SGOV",
+      "state": "D",
+      "nav": 10418.46,
+      "strategy_return_pct": -64.27
     }
   ],
   "deposits": [
@@ -1286,32 +1303,32 @@
     }
   ],
   "summary": {
-    "updated_at": "2026-07-01 04:50 KST",
+    "updated_at": "2026-07-02 04:50 KST",
     "strategy": "4-Regime v5k",
     "current_ticker": "SGOV",
     "current_state": "D",
     "total_invested": 29157.07,
-    "current_nav": 10446.97,
-    "strategy_return_pct": -64.17,
+    "current_nav": 10418.46,
+    "strategy_return_pct": -64.27,
     "peak_nav": 18758.21,
-    "max_drawdown_pct": -66.91,
+    "max_drawdown_pct": -66.99,
     "trade_count": 36,
-    "days_running": 110,
+    "days_running": 111,
     "deposit_count": 15
   },
   "indicators": {
-    "date": "2026-07-01",
-    "vix": 16.44,
+    "date": "2026-07-02",
+    "vix": 16.22,
     "vix3m": 18.97,
     "vix_bb_upper": 22.0,
     "vix_shock": false,
     "vix_declining": true,
-    "term_structure": 0.8666,
-    "qqq": 736.62,
-    "qqq_ma50": 704.04,
-    "qqq_exit_threshold": 689.96,
+    "term_structure": 0.855,
+    "qqq": 726.55,
+    "qqq_ma50": 703.84,
+    "qqq_exit_threshold": 689.76,
     "qqq_below_ma50": false,
-    "wti_roc_20": -19.71,
+    "wti_roc_20": -22.08,
     "wti_95pct": 39.25,
     "wti_shock": false,
     "state_a": false,
