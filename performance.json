@@ -1315,23 +1315,35 @@
     },
     {
       "date": "2026-06-23",
-      "amount": 10836.75,
-      "note": "추가입금 자동 감지 ($10876.71 - $39.96)"
+      "amount": -6326.11,
+      "note": "출금 보정 (NAV 단절분: $17202.82 -> $10876.71)"
+    },
+    {
+      "date": "2026-07-03",
+      "amount": -5206.95,
+      "note": "출금 보정 (NAV 단절분: $10418.46 -> $5211.51)"
     }
   ],
   "summary": {
-    "updated_at": "2026-07-03 04:50 KST",
+    "updated_at": "2026-07-06 20:04 KST",
     "strategy": "4-Regime v5k",
     "current_ticker": "SGOV",
     "current_state": "D",
-    "total_invested": 29157.07,
+    "total_invested": 6787.26,
+    "net_contribution": 6787.26,
+    "total_deposited": 17921.22,
+    "total_withdrawn": 11802.82,
     "current_nav": 5211.51,
-    "strategy_return_pct": -82.13,
+    "strategy_return_pct": 0.39,
+    "twr_return_pct": 0.39,
+    "cash_flow_adjusted_return_pct": -23.22,
     "peak_nav": 18758.21,
-    "max_drawdown_pct": -83.49,
-    "trade_count": 36,
+    "max_drawdown_pct": -25.2,
+    "twr_max_drawdown_pct": -25.2,
+    "trade_count": 35,
     "days_running": 112,
-    "deposit_count": 15
+    "deposit_count": 13,
+    "withdrawal_count": 3
   },
   "indicators": {
     "date": "2026-07-03",
