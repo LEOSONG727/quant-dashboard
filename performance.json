@@ -1435,9 +1435,14 @@
     "state_c": false,
     "state_c_vix_declining": true,
     "sc_raw_3d": [
-      true,
+      false,
       false,
       true
+    ],
+    "sc_raw_3d_dates": [
+      "07-08",
+      "07-09",
+      "07-10"
     ],
     "tqqq_exit_2day": false
   }
