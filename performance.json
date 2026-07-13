@@ -607,6 +607,14 @@
       "state": "D",
       "cash": 25.93,
       "remaining_cash": 25.93
+    },
+    {
+      "date": "2026-07-14",
+      "nav": 5241.72,
+      "ticker": "SGOV",
+      "state": "D",
+      "cash": 25.93,
+      "remaining_cash": 25.93
     }
   ],
   "trade_log": [
@@ -1308,6 +1316,15 @@
       "state": "D",
       "nav": 5241.15,
       "strategy_return_pct": 0.96
+    },
+    {
+      "date": "2026-07-14",
+      "action": "hold",
+      "from_ticker": "BIL",
+      "to_ticker": "SGOV",
+      "state": "D",
+      "nav": 5241.72,
+      "strategy_return_pct": 0.97
     }
   ],
   "deposits": [
@@ -1393,7 +1410,7 @@
     }
   ],
   "summary": {
-    "updated_at": "2026-07-11 04:50 KST",
+    "updated_at": "2026-07-14 04:50 KST",
     "strategy": "4-Regime v5k",
     "current_ticker": "SGOV",
     "current_state": "D",
@@ -1401,31 +1418,31 @@
     "net_contribution": 6787.26,
     "total_deposited": 17921.22,
     "total_withdrawn": 11802.82,
-    "current_nav": 5241.15,
-    "strategy_return_pct": 0.96,
-    "twr_return_pct": 0.96,
-    "cash_flow_adjusted_return_pct": -22.78,
+    "current_nav": 5241.72,
+    "strategy_return_pct": 0.97,
+    "twr_return_pct": 0.97,
+    "cash_flow_adjusted_return_pct": -22.77,
     "peak_nav": 18758.21,
     "max_drawdown_pct": -25.2,
     "twr_max_drawdown_pct": -25.2,
     "trade_count": 35,
-    "days_running": 120,
+    "days_running": 123,
     "deposit_count": 13,
     "withdrawal_count": 3
   },
   "indicators": {
-    "date": "2026-07-11",
-    "vix": 15.21,
-    "vix3m": 18.66,
+    "date": "2026-07-14",
+    "vix": 17.31,
+    "vix3m": 19.76,
     "vix_bb_upper": 22.0,
     "vix_shock": false,
-    "vix_declining": true,
-    "term_structure": 0.8151,
-    "qqq": 725.82,
-    "qqq_ma50": 709.94,
-    "qqq_exit_threshold": 695.74,
-    "qqq_below_ma50": false,
-    "wti_roc_20": -23.08,
+    "vix_declining": false,
+    "term_structure": 0.876,
+    "qqq": 712.15,
+    "qqq_ma50": 715.62,
+    "qqq_exit_threshold": 701.31,
+    "qqq_below_ma50": true,
+    "wti_roc_20": -11.2,
     "wti_95pct": 39.25,
     "wti_shock": false,
     "state_a": false,
@@ -1433,16 +1450,16 @@
     "state_b_ts_recent": false,
     "state_b_ts_normalized": true,
     "state_c": false,
-    "state_c_vix_declining": true,
+    "state_c_vix_declining": false,
     "sc_raw_3d": [
       false,
-      false,
-      true
+      true,
+      false
     ],
     "sc_raw_3d_dates": [
-      "07-08",
       "07-09",
-      "07-10"
+      "07-10",
+      "07-13"
     ],
     "tqqq_exit_2day": false
   }
